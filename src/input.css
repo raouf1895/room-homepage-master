@@ -1,0 +1,33 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '@fontsource/league-spartan';
+.after-bar {
+    position: relative;
+  }
+  
+  .after-bar-inner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s cubic-bezier(0.5, 0, 0.5, 1);
+    transform-origin: center;
+    margin-bottom: -5px;
+  }
+  
+  .after-bar:hover .after-bar-inner::after {
+    width: 50%;
+    left: 25%;
+    transform: translateX(0) scaleX(2);
+  }
+  
+  .after-bar-inner:not(:hover)::after {
+    width: 0;
+    left: 25%;
+    transform: translateX(0) scaleX(2);
+  }
